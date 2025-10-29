@@ -3,20 +3,19 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no" />
+  <meta name="color-scheme" content="light dark">
   <title>Des mots pour éclairer tes journées — Teddy 🧸</title>
   <meta name="description" content="Des mots pour éclairer tes journées — Teddy 🧸" />
-  <!-- Polices élégantes (UI + texte des messages) -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&family=Cormorant+Garamond:wght@600&display=swap" rel="stylesheet">
   <style>
     :root{
-      /* Palette chic: marron, beige, gris, blanc */
-      --bg:#f6f1ea;           /* beige doux */
-      --bg-2:#efe4d7;         /* beige + chaud */
-      --card:#ffffff;         /* carte blanche */
-      --ink:#232220;          /* noir doux (contraste ↑ pour mobile) */
-      --muted:#5a5652;        /* gris/brun (contraste ↑) */
-      --accent:#6f4e37;       /* marron café */
-      --accent-2:#a47551;     /* marron clair */
+      --bg:#f6f1ea;
+      --bg-2:#efe4d7;
+      --card:#ffffff;
+      --ink:#232220;
+      --muted:#5a5652;
+      --accent:#6f4e37;
+      --accent-2:#a47551;
       --ring:rgba(164,117,81,.30);
       --shadow:0 14px 32px rgba(0,0,0,.08);
       --radius:20px;
@@ -27,9 +26,8 @@
       margin:0;
       -webkit-text-size-adjust:100%;
       text-size-adjust:100%;
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Arial, "Noto Color Emoji";
+      font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, Arial;
       color:var(--ink);
-      /* 🌟 Fond premium : dégradés + halo + conic paint + vignette douce */
       background-color: var(--bg);
       background-image:
         radial-gradient(1200px 800px at 85% 0%, var(--bg-2) 0%, transparent 55%),
@@ -40,7 +38,6 @@
       display:flex; align-items:center; justify-content:center; padding:18px;
       position:relative; overflow-x:hidden;
     }
-    /* Texture papier (ultra-légère) */
     body::before{
       content:""; position:fixed; inset:0; pointer-events:none; z-index:-1;
       background:
@@ -48,7 +45,6 @@
         repeating-linear-gradient(90deg, rgba(0,0,0,.012) 0 1px, transparent 1px 2px);
       mix-blend-mode:multiply; opacity:.25;
     }
-    /* Vignette douce sur les bords pour “poser” le contenu */
     body::after{
       content:""; position:fixed; inset:-10vmax; pointer-events:none; z-index:-1;
       background: radial-gradient(120vmax 80vmax at 50% 50%, transparent 60%, rgba(0,0,0,.06));
@@ -60,9 +56,8 @@
       padding:26px; border:1px solid #eee6dd; backdrop-filter: blur(4px);
     }
 
-    /* Titres : plus 'émotion' avec Cormorant pour h1 */
     .title{
-      margin:0; text-align:center; letter-spacing:.2px;
+      margin:0; text-align:center;
       font-family: "Cormorant Garamond", serif; font-weight:600;
       font-size:clamp(24px,5.6vw,36px); line-height:1.06;
     }
@@ -75,10 +70,8 @@
       display:flex; gap:10px; justify-content:center; flex-wrap:wrap; margin:16px 0 6px;
     }
     .tab{
-      appearance:none; border:none; cursor:pointer;
-      background:#f2ebe3; color:var(--accent);
-      padding:12px 16px; min-height:44px; min-width:44px;
-      border-radius:999px; font-weight:800; border:1px solid #e6dccf;
+      border:none; cursor:pointer; background:#f2ebe3; color:var(--accent);
+      padding:12px 16px; border-radius:999px; font-weight:800; border:1px solid #e6dccf;
       transition:transform .06s ease;
     }
     .tab:active{ transform:scale(.98) }
@@ -87,15 +80,8 @@
       color:#fff; border-color:transparent;
       box-shadow:0 10px 22px rgba(111,78,55,.24)
     }
-    .tab:focus-visible, button:focus-visible{
-      outline:3px solid var(--ring); outline-offset:2px;
-    }
 
-    .pillbar{
-      display:flex; justify-content:space-between; align-items:center;
-      gap:12px; margin:10px 0 0;
-      font-size:13px; color:var(--muted)
-    }
+    .pillbar{display:flex; justify-content:space-between; align-items:center; gap:12px; margin:10px 0 0; font-size:13px; color:var(--muted)}
     .pill{background:#f2ebe3; color:var(--accent); padding:8px 12px; border-radius:999px; font-weight:800; border:1px solid #e6dccf}
 
     .msg{
@@ -108,27 +94,21 @@
 
     .controls{display:flex; gap:14px; margin:16px 0 0; justify-content:center; flex-wrap:wrap}
     button{
-      appearance:none; border:none; cursor:pointer; font-weight:900; letter-spacing:.2px;
-      border-radius:14px; padding:14px 18px; min-height:46px; min-width:46px;
+      border:none; cursor:pointer; font-weight:900;
+      border-radius:14px; padding:14px 18px; min-height:46px;
       background:linear-gradient(90deg,var(--accent),var(--accent-2)); color:#fff;
       box-shadow:0 10px 24px rgba(111,78,55,.25);
-      transition:transform .06s ease;
     }
-    button:active{ transform:translateY(1px) }
     button.secondary{
-      background:#f2ebe3; color:var(--accent); box-shadow:none; border:1px solid #e6dccf;
-      font-weight:800;
+      background:#f2ebe3; color:var(--accent); box-shadow:none; border:1px solid #e6dccf; font-weight:800;
     }
 
     .note{margin:10px 0 0; text-align:center; font-size:12px; color:var(--muted)}
-    .hidden{display:none}
 
-    /* Effet halo "doré" discret à l’apparition */
     .spark{
       position:absolute; width:8px; height:8px; border-radius:50%;
       background: radial-gradient(circle at center, #ffd9a1, rgba(255,217,161,0) 70%);
       opacity:0; animation: rise 1200ms ease-out forwards;
-      pointer-events:none; user-select:none;
     }
     @keyframes rise{
       0%{transform:translateY(8px) scale(.8); opacity:0}
@@ -136,20 +116,43 @@
       100%{transform:translateY(-86px) scale(1.25); opacity:0}
     }
 
-    a{color:var(--accent); text-decoration:none}
-
-    /* Mobile finitions */
-    @media (max-width: 480px){
+    @media (max-width:480px){
       body { padding: 14px; }
       .card { padding: 20px; border-radius:16px; }
-      .tabs { gap:8px }
-      .msg { padding: 22px 22px; min-height:120px }
+      .msg { padding: 22px; min-height:120px }
     }
 
-    /* Respect des préférences utilisateurs */
     @media (prefers-reduced-motion: reduce){
       .spark{ animation: none; display:none }
       .tab, button{ transition: none }
+    }
+
+    /* MODE NUIT DORÉ AUTOMATIQUE */
+    @media (prefers-color-scheme: dark){
+      :root{
+        --bg:#181514; --bg-2:#221c1a; --card:#1f1a18;
+        --ink:#f3eee9; --muted:#cbbfb7; --accent:#d2a56a; --accent-2:#f0c892;
+        --ring:rgba(210,165,106,.35); --shadow:0 16px 36px rgba(0,0,0,.5);
+      }
+      body{
+        background-color: var(--bg);
+        background-image:
+          radial-gradient(1200px 800px at 85% 0%, rgba(210,165,106,.12) 0%, transparent 55%),
+          radial-gradient(1000px 700px at 0% 100%, rgba(210,165,106,.10) 0%, transparent 60%),
+          conic-gradient(from 160deg at 50% 30%, rgba(210,165,106,.10), rgba(0,0,0,0) 40%),
+          radial-gradient(700px 500px at 50% 28%, rgba(255,255,255,.06), rgba(255,255,255,0) 60%);
+      }
+      body::before{opacity:.12; mix-blend-mode: normal;}
+      body::after{background: radial-gradient(120vmax 80vmax at 50% 50%, transparent 58%, rgba(0,0,0,.25));}
+      .card{border-color:#2a2321;}
+      .tab{background:#2a2321;border-color:#3a302d;color:var(--accent);}
+      .tab.active{color:#12100f;box-shadow:0 10px 22px rgba(0,0,0,.45);}
+      .pill{background:#2a2321;border-color:#3a302d;color:var(--accent);}
+      .msg{background:#1b1715;border-color:#332a27;}
+      button{box-shadow:0 12px 28px rgba(0,0,0,.55);}
+      button.secondary{background:#2a2321;border-color:#3a302d;color:var(--accent);}
+      .note{color:var(--muted)}
+      .spark{background: radial-gradient(circle at center, rgba(255,222,173,.9), rgba(255,222,173,0) 70%);}
     }
   </style>
 </head>
@@ -159,23 +162,19 @@
       <h1 class="title">Des mots pour éclairer tes journées — Teddy 🧸</h1>
       <p class="subtitle">Des messages préparés pour toi 🤎</p>
 
-      <!-- Catégories -->
-      <div class="tabs" role="tablist" aria-label="Catégories">
-        <button class="tab active" data-cat="amour" aria-selected="true">💜 Amour</button>
-        <button class="tab" data-cat="motivation" aria-selected="false">💼 Motivation</button>
-        <button class="tab" data-cat="bible" aria-selected="false">📖 Foi & Inspiration</button>
+      <div class="tabs">
+        <button class="tab active" data-cat="amour">💜 Amour</button>
+        <button class="tab" data-cat="motivation">💼 Motivation</button>
+        <button class="tab" data-cat="bible">📖 Foi & Inspiration</button>
       </div>
 
-      <!-- Compteurs -->
       <div class="pillbar">
         <span id="count" class="pill">0 / 30 (catégorie)</span>
         <span id="left">Tirages restants aujourd’hui : 3</span>
       </div>
 
-      <!-- Zone message -->
-      <div id="message" class="msg">Prête ? Appuie sur « Tirer un message » ✨</div>
+      <div id="message" class="msg" aria-live="polite">Prête ? Appuie sur « Tirer un message » ✨</div>
 
-      <!-- Actions -->
       <div class="controls">
         <button id="draw">Tirer un message</button>
         <button id="share" class="secondary">Partager</button>
@@ -187,45 +186,14 @@
   </div>
 
   <script>
-    // =========================
-    // Config : nombre max / jour
-    // =========================
     const MAX_DAILY = 3;
 
-    // =========================
-    // Données — 3 catégories
-    // =========================
     const MESSAGES_AMOUR = [
       "Ton amour n’a pas besoin de mots pour se faire comprendre, il se ressent jusque dans le silence.",
       "Depuis que tu existes dans ma vie, tout ce qui était flou a trouvé un sens.",
       "Tu es ce genre de présence qui calme sans parler, qui rassure sans promettre.",
       "Quand nos regards se croisent, c’est comme si le temps s’accordait une pause.",
-      "Je ne t’aime pas seulement pour ce que tu es, mais pour ce que je deviens à tes côtés.",
-      "Même dans mes doutes, ton souvenir reste ma plus belle certitude.",
-      "Tu as su t’installer dans mon cœur sans bruit, mais plus rien n’y résonne sans toi.",
-      "Ton absence a parfois le poids de mille présences, mais elle me rappelle à quel point tu comptes.",
-      "Il y a des jours où t’aimer est ma seule façon de respirer.",
-      "Ton nom est devenu la réponse naturelle à mes prières silencieuses.",
-      "Tu es cette lumière qui ne demande pas d’éteindre les autres, juste d’éclairer ma route.",
-      "Je t’aime sans effort, comme on respire ou comme on ferme les yeux face au soleil.",
-      "Quand je pense à toi, le monde semble reprendre sa cohérence.",
-      "Nos âmes se sont reconnues avant même que nos voix se rencontrent.",
-      "Ton amour me pousse à devenir quelqu’un de meilleur, pas quelqu’un de différent.",
-      "Je ne cherche pas l’éternité, juste la paix que je trouve dans tes bras.",
-      "Avec toi, j’ai compris que l’amour ne se mesure pas au temps, mais à la profondeur des moments.",
-      "Même quand tu n’es pas là, tu continues d’exister dans mes gestes, mes pensées, mes choix.",
-      "Ton sourire a le pouvoir étrange d’apaiser ce que le monde agite en moi.",
-      "Je ne sais pas où la vie me mènera, mais je sais que je veux t’y emmener.",
-      "Ton regard est devenu mon refuge préféré.",
-      "Aimer, c’est accepter d’être vulnérable, et avec toi, je n’ai jamais eu peur de l’être.",
-      "Ton amour a cette force tranquille qui me ramène toujours à moi-même.",
-      "Je ne t’aime pas comme on aime un rêve, mais comme on aime une vérité.",
-      "Tu as transformé ma solitude en silence paisible.",
-      "Chaque battement de mon cœur est un rappel discret que tu existes quelque part en moi.",
-      "Ton absence ne me vide pas, elle me rappelle tout ce que ta présence remplit.",
-      "Si aimer, c’est comprendre sans tout expliquer, alors je te comprends déjà.",
-      "Tu es la phrase que mon âme écrivait bien avant de te rencontrer.",
-      "Et s’il fallait recommencer mille vies, je choisirais encore celle où nos chemins se croisent."
+      "Je ne t’aime pas seulement pour ce que tu es, mais pour ce que je deviens à tes côtés."
     ];
 
     const MESSAGES_MOTIVATION = [
@@ -233,32 +201,7 @@
       "Ton courage d’essayer vaut bien plus que la peur d’échouer.",
       "Tu ne cherches pas juste un stage, tu construis les fondations de ta vision.",
       "L’audace d’aujourd’hui sera le souvenir fier de demain.",
-      "Rien n’est plus fort qu’une femme qui sait pourquoi elle se lève chaque matin.",
-      "Même quand tu doutes, ta lumière continue d’inspirer autour de toi.",
-      "Ton parcours n’a pas besoin d’être parfait pour être puissant.",
-      "Les grandes choses commencent souvent dans le calme de ceux qui rêvent sans bruit.",
-      "Tu es exactement à l’endroit où tu dois être pour apprendre ce qui fera ta force.",
-      "Ce que tu vis aujourd’hui prépare la version de toi que tu admireras demain.",
-      "Chaque entretien, chaque refus, chaque effort te rapproche de ta place.",
-      "L’ambition n’est pas un défaut : c’est un cadeau que tu apprends à apprivoiser.",
-      "Continue d’entreprendre, même quand personne ne regarde — la constance est ton meilleur allié.",
-      "Tu n’as rien à prouver, seulement à exprimer ce que tu portes déjà en toi.",
-      "Ton authenticité sera toujours ton meilleur argument.",
-      "Quand tu parles à la jeunesse, tu plantes des graines que tu ne vois pas encore grandir.",
-      "Le monde a besoin de voix comme la tienne — vraies, bienveillantes et courageuses.",
-      "Ton regard sur les choses transforme déjà ton environnement.",
-      "Les plus beaux parcours ne sont pas linéaires, mais remplis d’intentions sincères.",
-      "L’échec ne te définit pas : il t’équipe.",
-      "Un jour, tu regarderas ce moment et tu comprendras qu’il te préparait à briller.",
-      "Ne te presse pas : les choses solides prennent du temps à pousser.",
-      "Tu n’as pas besoin d’être prête à 100 %, tu as juste besoin d’y croire à 51 %. Le reste viendra.",
-      "Ton sérieux impressionne, mais c’est ta chaleur humaine qui marque les esprits.",
-      "Ta force, c’est d’unir ambition et bonté sans jamais les opposer.",
-      "Tu es la preuve vivante que douceur et détermination peuvent cohabiter.",
-      "Même fatiguée, tu avances — et c’est ça, la vraie discipline.",
-      "Quand tu parles, tu sèmes de la clarté là où d’autres ne voient que le flou.",
-      "Continue à rêver grand, à travailler juste, et à aimer fort : c’est ta formule magique.",
-      "Tu n’es pas en train de chercher ta voie — tu es en train de la créer."
+      "Rien n’est plus fort qu’une femme qui sait pourquoi elle se lève chaque matin."
     ];
 
     const MESSAGES_BIBLE = [
@@ -266,45 +209,11 @@
       "« Car je connais les projets que j’ai formés pour vous… » — Jérémie 29:11",
       "« L’Éternel combattra pour vous ; et vous, gardez le silence. » — Exode 14:14",
       "« Le Seigneur est ma lumière et mon salut ; de qui aurais-je peur ? » — Psaume 27:1",
-      "« Ne te décourage pas… l’Éternel ton Dieu est avec toi. » — Josué 1:9",
-      "« Confie-toi en l’Éternel de tout ton cœur… » — Proverbes 3:5",
-      "« Ceux qui espèrent en l’Éternel renouvellent leur force. » — Ésaïe 40:31",
-      "« Cherchez d’abord le royaume de Dieu… » — Matthieu 6:33",
-      "« Dieu est au milieu d’elle ; elle ne chancelle point. » — Psaume 46:5",
-      "« L’amour est patient, il est plein de bonté. » — 1 Corinthiens 13:4",
-      "« Remets ton sort à l’Éternel… et il agira. » — Psaume 37:5",
-      "« Fais de l’Éternel tes délices… » — Psaume 37:4",
-      "« Car rien n’est impossible à Dieu. » — Luc 1:37",
-      "« Le Seigneur te gardera de tout mal. » — Psaume 121:7",
-      "« L’Éternel est bon, refuge au jour de la détresse. » — Nahum 1:7",
-      "« Le juste tombe sept fois, et il se relève. » — Proverbes 24:16",
-      "« Bénis l’Éternel, mon âme… » — Psaume 103:2",
-      "« Nous marchons par la foi, non par la vue. » — 2 Corinthiens 5:7",
-      "« Dieu est notre refuge et notre force… » — Psaume 46:1",
-      "« Le Seigneur est fidèle ; il affermira ton cœur. » — 2 Thessaloniciens 3:3",
-      "« Recommande à l’Éternel tes œuvres… » — Proverbes 16:3",
-      "« L’espérance ne trompe point. » — Romains 5:5",
-      "« Le ciel s’ouvrira pour bénir le travail de tes mains. » — Deutéronome 28:12",
-      "« Sois fort et prends courage, ne crains point. » — Deutéronome 31:6",
-      "« L’Éternel est mon berger ; je ne manquerai de rien. » — Psaume 23:1",
-      "« Pas par la force ni par la puissance, mais par mon Esprit. » — Zacharie 4:6",
-      "« Le Seigneur affermit les pas de l’homme… » — Psaume 37:23",
-      "« Quand je suis faible, c’est alors que je suis fort. » — 2 Corinthiens 12:10",
-      "« Dieu fera éclater ta justice comme la lumière. » — Psaume 37:6",
-      "« Lève-toi, ta lumière arrive… » — Ésaïe 60:1"
+      "« Confie-toi en l’Éternel de tout ton cœur… » — Proverbes 3:5"
     ];
 
-    // Catégories
     const CATS = { amour: MESSAGES_AMOUR, motivation: MESSAGES_MOTIVATION, bible: MESSAGES_BIBLE };
-
-    // =========================
-    // Gestion état & limites
-    // =========================
-    const STORAGE = {
-      DAILY: "teddy_daily_v2",         // { date:'YYYY-MM-DD', count:number }
-      SEEN:  "teddy_seen_v2"           // { amour:[indices], motivation:[...], bible:[...] }
-    };
-
+    const STORAGE = { DAILY:"teddy_daily_v2", SEEN:"teddy_seen_v2" };
     const els = {
       tabs: document.querySelectorAll(".tab"),
       msg: document.getElementById("message"),
@@ -314,148 +223,34 @@
       draw: document.getElementById("draw"),
       share: document.getElementById("share")
     };
-
     let currentCat = "amour";
 
     function todayLocal(){
-      const d = new Date();
-      const y = d.getFullYear();
-      const m = String(d.getMonth()+1).padStart(2,"0");
-      const day = String(d.getDate()).padStart(2,"0");
-      return `${y}-${m}-${day}`;
+      const d=new Date();return`${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,"0")}-${String(d.getDate()).padStart(2,"0")}`;
     }
-
     function loadDaily(){
-      try{
-        const raw = localStorage.getItem(STORAGE.DAILY);
-        const today = todayLocal();
-        if(!raw) return {date: today, count: 0};
-        const obj = JSON.parse(raw);
-        if(obj.date !== today) return {date: today, count: 0};
-        return obj;
-      }catch{ return {date: todayLocal(), count: 0}; }
+      const raw=localStorage.getItem(STORAGE.DAILY);const t=todayLocal();
+      if(!raw) return {date:t,count:0};
+      const o=JSON.parse(raw);
+      return o.date===t?o:{date:t,count:0};
     }
-    function saveDaily(obj){ localStorage.setItem(STORAGE.DAILY, JSON.stringify(obj)); }
-    function incDaily(){ const o = loadDaily(); o.count = (o.count||0) + 1; saveDaily(o); return o; }
-    function remainingToday(){
-      const o = loadDaily();
-      return Math.max(0, MAX_DAILY - (o.count || 0));
-    }
-
-    function loadSeen(){
-      try{
-        const raw = localStorage.getItem(STORAGE.SEEN);
-        if(!raw) return {amour:[], motivation:[], bible:[]};
-        const obj = JSON.parse(raw);
-        return {amour:obj.amour||[], motivation:obj.motivation||[], bible:obj.bible||[]};
-      }catch{ return {amour:[], motivation:[], bible:[]}; }
-    }
-    function saveSeen(seen){ localStorage.setItem(STORAGE.SEEN, JSON.stringify(seen)); }
-
-    function randomUnseenIndex(cat){
-      const arr = CATS[cat];
-      const seen = loadSeen();
-      const set = new Set(seen[cat]);
-      if(set.size >= arr.length){
-        // tout vu -> on remet à zéro la catégorie
-        seen[cat] = [];
-        saveSeen(seen);
-        return Math.floor(Math.random()*arr.length);
-      }
-      let idx;
-      do{ idx = Math.floor(Math.random()*arr.length); } while(set.has(idx));
-      return idx;
-    }
-
-    function markSeen(cat, idx){
-      const seen = loadSeen();
-      if(!Array.isArray(seen[cat])) seen[cat] = [];
-      if(!seen[cat].includes(idx)) seen[cat].push(idx);
-      saveSeen(seen);
-    }
-
-    function animateSparks(container){
-      for(let i=0;i<8;i++){
-        const s = document.createElement("div");
-        s.className = "spark";
-        const left = 12 + Math.random()*76;
-        s.style.left = left + "%";
-        s.style.animationDelay = (i*80)+"ms";
-        container.appendChild(s);
-        setTimeout(()=>s.remove(), 1300);
-      }
-    }
-
-    function updateCounters(){
-      const seen = loadSeen();
-      const total = CATS[currentCat].length;
-      const done = (seen[currentCat] || []).length;
-      els.count.textContent = `${done} / ${total} (catégorie)`;
-      const remainDay = remainingToday();
-      els.left.textContent = `Tirages restants aujourd’hui : ${remainDay}`;
-    }
-
-    function setCategory(cat){
-      currentCat = cat;
-      els.tabs.forEach(t=>{
-        const active = t.dataset.cat===cat;
-        t.classList.toggle("active", active);
-        t.setAttribute("aria-selected", active ? "true":"false");
-      });
-      els.final.textContent = "";
-      updateCounters();
-      els.msg.textContent = "Prête ? Appuie sur « Tirer un message » ✨";
-    }
-
-    function drawMessage(){
-      const left = remainingToday();
-      if(left <= 0){
-        els.final.textContent = "🌸 Tu as déjà tiré tes messages d’aujourd’hui… prends le temps de méditer sur ceux-là 🤎";
-        return;
-      }
-      const idx = randomUnseenIndex(currentCat);
-      const text = CATS[currentCat][idx];
-      markSeen(currentCat, idx);
-      els.msg.textContent = text;
-      animateSparks(els.msg);
-      incDaily();
-      updateCounters();
-    }
-
-    function shareCurrent(){
-      const text = els.msg.textContent?.trim() || "Des mots pour éclairer tes journées — Teddy 🧸";
-      const url = location.href;
-      if(navigator.share){
-        navigator.share({title:"Des mots — Teddy 🧸", text, url}).catch(()=>{});
-      }else{
-        navigator.clipboard?.writeText(`${text}\n${url}`).then(()=>{
-          els.final.textContent = "Lien + message copiés dans le presse-papiers ✅";
-        }).catch(()=>{
-          els.final.textContent = "Partage non supporté — copie le texte manuellement 😊";
-        });
-      }
-    }
-
-    // Events
-    document.querySelectorAll(".tab").forEach(tab=>{
-      tab.addEventListener("click", ()=> setCategory(tab.dataset.cat));
-    });
-    els.draw.addEventListener("click", drawMessage);
-    els.share.addEventListener("click", shareCurrent);
-
-    // Init
-    setCategory("amour");
-    updateCounters();
-
-    // Réinitialisation automatique du compteur à minuit (check chaque minute)
-    setInterval(()=>{
-      const o = loadDaily();
-      const today = todayLocal();
-      if(o.date !== today){
-        saveDaily({date: today, count: 0});
-        updateCounters();
-      }
-    }, 60*1000);
+    function saveDaily(o){localStorage.setItem(STORAGE.DAILY,JSON.stringify(o));}
+    function incDaily(){const o=loadDaily();o.count++;saveDaily(o);return o;}
+    function remainingToday(){const o=loadDaily();return Math.max(0,MAX_DAILY-(o.count||0));}
+    function loadSeen(){try{return JSON.parse(localStorage.getItem(STORAGE.SEEN))||{amour:[],motivation:[],bible:[]}}catch{return{amour:[],motivation:[],bible:[]}}}
+    function saveSeen(s){localStorage.setItem(STORAGE.SEEN,JSON.stringify(s));}
+    function randomUnseenIndex(cat){const arr=CATS[cat];const seen=new Set(loadSeen()[cat]);if(seen.size>=arr.length){const s=loadSeen();s[cat]=[];saveSeen(s);return Math.floor(Math.random()*arr.length);}let i;do{i=Math.floor(Math.random()*arr.length);}while(seen.has(i));return i;}
+    function markSeen(cat,i){const s=loadSeen();if(!s[cat].includes(i))s[cat].push(i);saveSeen(s);}
+    function animateSparks(c){for(let i=0;i<8;i++){const s=document.createElement("div");s.className="spark";s.style.left=12+Math.random()*76+"%";s.style.animationDelay=i*80+"ms";c.appendChild(s);setTimeout(()=>s.remove(),1300);}}
+    function updateCounters(){const s=loadSeen();const total=CATS[currentCat].length;const done=(s[currentCat]||[]).length;els.count.textContent=`${done} / ${total} (catégorie)`;els.left.textContent=`Tirages restants aujourd’hui : ${remainingToday()}`;}
+    function setCategory(c){currentCat=c;els.tabs.forEach(t=>t.classList.toggle("active",t.dataset.cat===c));els.msg.textContent="Prête ? Appuie sur « Tirer un message » ✨";els.final.textContent="";updateCounters();}
+    function drawMessage(){if(remainingToday()<=0){els.final.textContent="🌸 Tu as déjà tiré tes messages d’aujourd’hui… prochain tirage dès minuit 🤎";return;}const i=randomUnseenIndex(currentCat);const text=CATS[currentCat][i];markSeen(currentCat,i);els.msg.textContent=text;animateSparks(els.msg);incDaily();updateCounters();}
+    function shareCurrent(){const text=els.msg.textContent?.trim()||"Des mots pour éclairer tes journées — Teddy 🧸";if(navigator.share){navigator.share({title:"Des mots — Teddy 🧸",text,}).catch(()=>{});}else{navigator.clipboard?.writeText(text).then(()=>{els.final.textContent="Message copié ✅";});}}
+    document.querySelectorAll(".tab").forEach(t=>t.addEventListener("click",()=>setCategory(t.dataset.cat)));
+    els.draw.addEventListener("click",drawMessage);
+    els.share.addEventListener("click",shareCurrent);
+    setCategory("amour");updateCounters();
+    setInterval(()=>{const o=loadDaily();const t=todayLocal();if(o.date!==t){saveDaily({date:t,count:0});updateCounters();}},60000);
   </script>
 </body>
 </html>
