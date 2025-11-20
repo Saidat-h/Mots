@@ -189,28 +189,78 @@
     const MAX_DAILY = 3;
 
     const MESSAGES_AMOUR = [
-      "Ton amour n’a pas besoin de mots pour se faire comprendre, il se ressent jusque dans le silence.",
-      "Depuis que tu existes dans ma vie, tout ce qui était flou a trouvé un sens.",
-      "Tu es ce genre de présence qui calme sans parler, qui rassure sans promettre.",
-      "Quand nos regards se croisent, c’est comme si le temps s’accordait une pause.",
-      "Je ne t’aime pas seulement pour ce que tu es, mais pour ce que je deviens à tes côtés."
-    ];
+  "Ton absence me manque, ta présence me complète. Avec toi, tout devient plus doux.",
+  "Je ne savais pas que mon cœur pouvait sourire jusqu’à ce qu’il apprenne ton prénom.",
+  "Ton regard a ce pouvoir étrange : il me rassure, il m’apaise, il me ramène à la maison.",
+  "Aimer quelqu’un, c’est le sentir dans chaque battement… et toi, tu es dans chacun des miens.",
+  "Tu es ma douceur préférée dans un monde qui va trop vite.",
+  "Tes messages ont le don d'éclairer mes journées, même les plus sombres.",
+  "Si je pouvais choisir un endroit où être, ce serait encore et toujours dans tes bras.",
+  "Ton amour est une lumière. Il ne fait pas de bruit, mais il efface tout le reste.",
+  "Tu n’es pas seulement importante, tu es essentielle. Tu es mon évidence.",
+  "Tu es devenue l’une de mes plus belles habitudes, et je ne veux pas te perdre.",
+  "Il y a des millions de visages sur terre, mais le tien est celui que mon cœur choisit sans réfléchir.",
+  "Rien n’est plus beau que la façon dont tu rends ma vie plus simple juste en étant là.",
+  "Ton sourire a quelque chose de magique : il guérit des choses que tu ne sais même pas.",
+  "Aimer avec toi, c’est doux. C’est simple. C’est naturel. Et ça me fait du bien.",
+  "Je ne sais pas de quoi demain sera fait, mais je sais que je veux t’y retrouver."
+];
 
-    const MESSAGES_MOTIVATION = [
-      "Tu n’as pas choisi la facilité, tu as choisi la croissance — et c’est ce qui te rend unique.",
-      "Ton courage d’essayer vaut bien plus que la peur d’échouer.",
-      "Tu ne cherches pas juste un stage, tu construis les fondations de ta vision.",
-      "L’audace d’aujourd’hui sera le souvenir fier de demain.",
-      "Rien n’est plus fort qu’une femme qui sait pourquoi elle se lève chaque matin."
-    ];
 
-    const MESSAGES_BIBLE = [
-      "« Je puis tout par celui qui me fortifie. » — Philippiens 4:13",
-      "« Car je connais les projets que j’ai formés pour vous… » — Jérémie 29:11",
-      "« L’Éternel combattra pour vous ; et vous, gardez le silence. » — Exode 14:14",
-      "« Le Seigneur est ma lumière et mon salut ; de qui aurais-je peur ? » — Psaume 27:1",
-      "« Confie-toi en l’Éternel de tout ton cœur… » — Proverbes 3:5"
-    ];
+  const MESSAGES_MOTIVATION = [
+  "Ton parcours n’a jamais été un hasard. Chaque étape t’a préparée pour ce que tu es en train de devenir.",
+  "Tu n’es pas obligée d’avoir toutes les réponses aujourd’hui. Continue d’avancer, la clarté viendra avec le chemin.",
+  "Quand tu crois que tu touches tes limites, tu es souvent à deux pas d’une percée.",
+  "Tu portes en toi une force tranquille que beaucoup sous-estiment. Ne l’oublie jamais.",
+  "Le monde n’a pas encore vu tout ce dont tu es capable. Tu n’as fait qu’effleurer ton potentiel.",
+  "Tes rêves ne sont pas trop grands. Ils attendent juste que tu te donnes la permission d’y croire réellement.",
+  "Ton ambition n’est pas un défaut. C’est ce qui te fera franchir des portes que d’autres n’osent même pas regarder.",
+  "Tu ne dois pas prouver ta valeur. Tu dois seulement te rappeler qui tu es réellement.",
+  "Chaque fois que tu te choisis, tu deviens plus forte et plus alignée avec ton avenir.",
+  "Ta patience finira par t’amener exactement là où tu dois être. Rien ne se construit sans fondations.",
+  "Arrête de penser que tu n’es pas prête : c’est en te lançant que tu vas le devenir.",
+  "Le courage, ce n’est pas l’absence de peur. C’est avancer malgré elle — et tu le fais chaque jour.",
+  "Tu ne viens pas d’aussi loin pour abandonner maintenant. Regarde ce que tu as déjà surmonté.",
+  "Ce que tu construis intérieurement finira par se refléter extérieurement. Continue ton travail.",
+  "Ton futur a besoin de ta détermination d’aujourd’hui, pas de tes doutes.",
+  
+  // 💥 MESSAGES SPÉCIALEMENT POUR SES PROJETS (100% nouveaux)
+  
+  "Tout ce que tu as en tête est réalisable. Si ton cœur y pense, c’est que ta vie peut le contenir.",
+  "Les projets qui t’inspirent ne sont pas des illusions : ce sont des directions. Suis-les.",
+  "Tu n’es pas faite pour regarder les autres réussir. Tu es faite pour écrire ta propre réussite.",
+  "Si tes idées reviennent dans ton esprit, c’est parce qu’elles attendent d’être vécues.",
+  "Tu as déjà en toi la discipline, la créativité et l’intelligence pour aller au bout de tout ce que tu veux lancer.",
+  "Ne te demande pas si tu peux y arriver. Demande-toi simplement par où commencer.",
+  "Le monde a besoin de ce que tu veux créer. Ne retiens plus ce que tu portes.",
+  "Tes projets ne sont pas trop grands : ils correspondent exactement à la taille de ton destin.",
+  "Quand tu décideras vraiment d’y aller, rien ne pourra te freiner — absolument rien.",
+  "Tu vas réussir. Pas ‘peut-être’. Pas ‘un jour’. Tu vas réussir parce que tu as été créée pour accomplir."
+];
+
+   const MESSAGES_BIBLE = [
+  "Dieu ne t’a jamais laissée seule. Même quand tu ne le vois pas, Il prépare déjà la suite pour toi.",
+  "Ce que Dieu a prévu pour toi dépasse ce que tu imagines. Laisse-toi guider, Sa route est la bonne.",
+  "Quand tu n’as plus de force, souviens-toi que Sa force n’a pas de limite.",
+  "Dieu ouvre toujours un chemin là où toi, tu ne vois qu’un mur.",
+  "Ton histoire est entre les mains de Celui qui ne fait jamais d’erreurs.",
+  "Dieu calme les tempêtes, mais parfois Il calme ton cœur d’abord.",
+  "Tu n’as pas besoin de tout comprendre pour avancer. Aie confiance, Dieu voit plus loin que toi.",
+  "Le plan de Dieu n’est jamais en retard. Il arrive toujours au moment parfait.",
+  "Lorsque tu remets tes projets entre Ses mains, Il les transforme en victoires.",
+  "Ta foi est petite parfois, et pourtant Dieu fait de grandes choses avec peu.",
+  "Si tu savais tout ce que Dieu écarte de ta route, tu dormirais le cœur léger.",
+  "Les portes que Dieu ouvre ne peuvent être fermées par personne.",
+  "Même les larmes que tu caches, Dieu les voit, et Il en fera une source de paix.",
+  "Quand tu marches avec Dieu, chaque pas devient une avancée — même quand tu crois stagner.",
+  "Dieu ne te demande pas d’être parfaite. Il te demande juste d’être sincère et de Lui faire confiance.",
+  "Ce que tu perds aujourd’hui prépare ce que Dieu va te donner demain.",
+  "Dieu n’oublie jamais Ses promesses. Ce qu’Il te destine te retrouvera toujours.",
+  "La paix que Dieu donne ne dépend pas des circonstances, mais de Sa présence.",
+  "Tu n’as pas besoin d’avoir tout sous contrôle : Dieu maîtrise déjà tout.",
+  "Aucun combat n’est trop lourd quand Dieu marche à tes côtés."
+];
+
 
     const CATS = { amour: MESSAGES_AMOUR, motivation: MESSAGES_MOTIVATION, bible: MESSAGES_BIBLE };
     const STORAGE = { DAILY:"teddy_daily_v2", SEEN:"teddy_seen_v2" };
@@ -254,5 +304,6 @@
   </script>
 </body>
 </html>
+
 
 
